@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: url('https://images.unsplash.com/photo-1618635245221-a1974f59cb02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    place-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: lightcoral;
+}
+
+.logo{
+    border-radius: 10px;
+    width: 75px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.share{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logo_container,
+.share{
+    width: 20%;
+}
+
+#menu_heading{
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 10px;
+    padding: 0px 20px;
+}
+
+.share i{
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: white;
+}
+
+.share i:hover{
+    border-radius: 50%;
+    color: black;
+}
+
+.share i:hover + .tooltip{
+    display: flex;
+}
+
+.tooltip{
+    display: none;
+    position: absolute;
+    font-size: .75rem;
+    background-color: black;
+    color: white;
+    top: 5px;
+    padding: 1px;
+    border-radius: 5px;
+}
+
+.fa-solid.fa-circle-arrow-left{
+    font-size: 1.75rem;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+.fa-solid.fa-circle-arrow-left:hover{
+    color: red;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.fa-solid.fa-circle-arrow-left:active{
+    transform: scale(90%);
+    color: lightgreen;
+}
+
+.pasta_dish img,
+.pizza_dish img{
+    width: 400px;
+    height: 300px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10%;
+    grid-area: box1;
+}
+
+.pasta_dish img:hover,
+.pizza_dish img:hover{
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu_gallery{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.menu_gallery h3{
+    background-color: maroon;
+    color: white;
+    width: 25%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.pasta_gallery,
+.pizza_gallery{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+.pasta_dish,
+.pizza_dish{
+    display: grid;
+    grid-template-areas: 
+    'box1 box2'
+    'box1 box3';
+    margin: 20px;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+}
+
+hr{
+    height: 1rem;
+    background-color: lightgreen;
+    border-radius: 20px;
+}
+
+figcaption{
+    grid-area: box2;
+    color: maroon;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+p{
+    grid-area: box3;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 550px){
+    .pasta_dish,
+    .pizza_dish{
+        grid-template-areas: 
+        'box1 box1'
+        'box2 box3';
+        flex-wrap: wrap;
+    }
+
+    .pasta_dish img,
+    .pizza_dish img{
+        width: 200px;
+        height: 200px;
+        place-items: center;
+        width: 80%;
+        margin: auto;
+}
+
+}
